@@ -79,11 +79,29 @@ data:extend({
   },
   {
     type = "int-setting",
-    name = "ltn-dispatcher-provider-threshold",
+    name = "ltn-dispatcher-requester-stack-threshold",
     order = "bb",
+    setting_type = "runtime-global",
+    default_value = 0,
+    minimum_value = 0,
+    maximum_value = 2147483647, -- prevent 32bit signed overflow
+  },
+  {
+    type = "int-setting",
+    name = "ltn-dispatcher-provider-threshold",
+    order = "bc",
     setting_type = "runtime-global",
     default_value = 1000,
     minimum_value = 1,
+    maximum_value = 2147483647, -- prevent 32bit signed overflow
+  },
+  {
+    type = "int-setting",
+    name = "ltn-dispatcher-provider-stack-threshold",
+    order = "bd",
+    setting_type = "runtime-global",
+    default_value = 0,
+    minimum_value = 0,
     maximum_value = 2147483647, -- prevent 32bit signed overflow
   },
   {

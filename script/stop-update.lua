@@ -110,11 +110,11 @@ function UpdateStop(stopID, stop)
   local max_carriages = 0
   local max_trains = 0
   local requesting_threshold = min_requested
-  local requesting_threshold_stacks = 0
+  local requesting_threshold_stacks = min_stacks_requested
   local requester_priority = 0
   local no_warnings = false
   local providing_threshold = min_provided
-  local providing_threshold_stacks = 0
+  local providing_threshold_stacks = min_stacks_provided
   local provider_priority = 0
   local locked_slots = 0
 

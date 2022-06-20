@@ -151,11 +151,11 @@ function CreateStop(entity)
     max_carriages = 0,
     max_trains = 0,
     requesting_threshold = min_requested,
-    requesting_threshold_stacks = 0,
+    requesting_threshold_stacks = min_stacks_requested,
     requester_priority = 0,
     no_warnings = false,
     providing_threshold = min_provided,
-    providing_threshold_stacks = 0,
+    providing_threshold_stacks = min_stacks_provided,
     provider_priority = 0,
     locked_slots = 0,
   }

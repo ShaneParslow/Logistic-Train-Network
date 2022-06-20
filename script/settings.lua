@@ -10,7 +10,9 @@ message_filter_age = settings.global["ltn-interface-message-filter-age"].value
 message_include_gps = settings.global["ltn-interface-message-gps"].value
 debug_log = settings.global["ltn-interface-debug-logfile"].value
 min_requested = settings.global["ltn-dispatcher-requester-threshold"].value
+min_stacks_requested = settings.global["ltn-dispatcher-requester-stack-threshold"].value
 min_provided = settings.global["ltn-dispatcher-provider-threshold"].value
+min_stacks_provided = settings.global["ltn-dispatcher-provider-stack-threshold"].value
 schedule_cc = settings.global["ltn-dispatcher-schedule-circuit-control"].value
 depot_inactivity = settings.global["ltn-dispatcher-depot-inactivity(s)"].value * 60
 stop_timeout = settings.global["ltn-dispatcher-stop-timeout(s)"].value * 60
@@ -47,8 +49,14 @@ script.on_event(defines.events.on_runtime_mod_setting_changed, function(event)
   if event.setting == "ltn-dispatcher-requester-threshold" then
     min_requested = settings.global["ltn-dispatcher-requester-threshold"].value
   end
+  if event.setting == "ltn-dispatcher-requester-stack-threshold" then
+    min_stacks_requested = settings.global["ltn-dispatcher-requester-stack-threshold"].value
+  end
   if event.setting == "ltn-dispatcher-provider-threshold" then
     min_provided = settings.global["ltn-dispatcher-provider-threshold"].value
+  end
+  if event.setting == "ltn-dispatcher-provider-stack-threshold" then
+    min_stacks_provided = settings.global["ltn-dispatcher-provider-stack-threshold"].value
   end
   if event.setting == "ltn-dispatcher-schedule-circuit-control" then
     schedule_cc = settings.global["ltn-dispatcher-schedule-circuit-control"].value
